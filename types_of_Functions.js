@@ -29,3 +29,12 @@ function* generatorFunc() {
 
 const iterator = generatorFunc();
 console.log(iterator.next().value); // Output: 1
+
+//6.constructor function
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+const person1 = new Person("Alice", 25);
+
