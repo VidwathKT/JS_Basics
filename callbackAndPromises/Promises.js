@@ -1,5 +1,6 @@
 // Creating a Promise
 const myPromise = new Promise((resolve, reject) => {
+    
     const success = true;
 
     if (success) {

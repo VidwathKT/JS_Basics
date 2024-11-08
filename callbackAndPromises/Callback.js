@@ -24,7 +24,7 @@ console.log("End");
 // End
 // This message is delayed.
 
-//Call back hell
+//Callback hell
 function fetchData(callback) {
     setTimeout(() => {
         console.log("Data fetched");
