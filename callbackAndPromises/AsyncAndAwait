@@ -1,0 +1,92 @@
+// Fetching Data with async/await
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const data = { id: 1, name: "Alice" };
+            resolve(data);
+        }, 2000);
+    });
+}
+
+//Using async/await, we can fetch and log the data 
+async function displayData() {
+    try {
+        const data = await fetchData(); // Waits for fetchData() to resolve
+        console.log("Data received:", data);
+    } catch (error) {
+        console.log("Error:", error); // Catches any errors if fetchData rejects
+    }
+}
+
+displayData();
+//async function displayData() {
+    try {
+        const data = await fetchData(); // Waits for fetchData() to resolve
+        console.log("Data received:", data);
+    } catch (error) {
+        console.log("Error:", error); // Catches any errors if fetchData rejects
+    }
+}
+
+displayData();
+async function displayData() {
+    try {
+        const data = await fetchData(); // Waits for fetchData() to resolve
+        console.log("Data received:", data);
+    } catch (error) {
+        console.log("Error:", error); // Catches any errors if fetchData rejects
+    }
+}
+
+displayData();
+async function displayData() {
+    try {
+        const data = await fetchData(); // Waits for fetchData() to resolve
+        console.log("Data received:", data);
+    } catch (error) {
+        console.log("Error:", error); // Catches any errors if fetchData rejects
+    }
+}
+
+displayData();
+//Output (after 2 seconds)
+//Data received: { id: 1, name: "Alice" }
+
+// 1. Sequential Execution of async/await
+async function processTasksSequentially() {
+    const result1 = await task1(); // Waits for task1 to complete
+    const result2 = await task2(); // Waits for task2 to complete after task1
+    console.log(result1, result2);
+}
+
+//2. Concurrent Execution of async/await
+async function processTasksConcurrently() {
+    const [result1, result2] = await Promise.all([task1(), task2()]);
+    console.log(result1, result2);
+}
+
+// async/await with Promise.all
+async function getData() {
+    const promise1 = fetchData1(); // Returns a promise
+    const promise2 = fetchData2(); // Returns a promise
+
+    try {
+        const [data1, data2] = await Promise.all([promise1, promise2]);
+        console.log("Data from promise1:", data1);
+        console.log("Data from promise2:", data2);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+getData();
+
+//async/await with Arrow Functions
+const fetchDataAsync = async () => {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+};
