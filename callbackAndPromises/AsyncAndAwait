@@ -19,36 +19,7 @@ async function displayData() {
 }
 
 displayData();
-//async function displayData() {
-    try {
-        const data = await fetchData(); // Waits for fetchData() to resolve
-        console.log("Data received:", data);
-    } catch (error) {
-        console.log("Error:", error); // Catches any errors if fetchData rejects
-    }
-}
 
-displayData();
-async function displayData() {
-    try {
-        const data = await fetchData(); // Waits for fetchData() to resolve
-        console.log("Data received:", data);
-    } catch (error) {
-        console.log("Error:", error); // Catches any errors if fetchData rejects
-    }
-}
-
-displayData();
-async function displayData() {
-    try {
-        const data = await fetchData(); // Waits for fetchData() to resolve
-        console.log("Data received:", data);
-    } catch (error) {
-        console.log("Error:", error); // Catches any errors if fetchData rejects
-    }
-}
-
-displayData();
 //Output (after 2 seconds)
 //Data received: { id: 1, name: "Alice" }
 
