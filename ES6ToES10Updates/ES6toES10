@@ -1,0 +1,126 @@
+// ES6 (2015) Features
+class Animal {
+    constructor(name, color) {
+      this.name = name;
+      this.color = color;
+    }
+    // This is a property on the prototype chain
+    toString() {
+      console.log('name:' + this.name + ', color:' + this.color);
+ 
+    }
+  }
+ 
+ var animal = new Animal('myDog', 'yellow'); // instantiate
+ animal.toString(); // name: myDog, color: yellow
+ 
+ console.log(animal.hasOwnProperty('name')); //true
+ console.log(animal.hasOwnProperty('toString')); // false
+ console.log(animal.__proto__.hasOwnProperty('toString')); // true
+ 
+ class Cat extends Animal {
+  constructor(action) {
+    // The subclass must call the super function in the constructor, otherwise an error will be reported when new comes out
+    // If the constructor was not written originally, the default constructor with super will be automatically generated
+    super('cat','white');
+    this.action = action;
+  }
+  toString() {
+    console.log(super.toString());
+  }
+ }
+ 
+ var cat = new Cat('catch')
+ cat.toString();
+ 
+ console.log(cat instanceof Cat); // true
+ console.log(cat instanceof Animal); // true
+// 1. let and const
+let mutableVar = "I'm mutable";
+const constantVar = "I'm constant";
+
+// 2. Arrow functions
+const add = (a, b) => a + b;
+console.log("Arrow function result:", add(3, 5));
+
+// 3. Template literals
+const name = "John";
+console.log(`Hello, ${name}!`);
+
+// 4. Destructuring
+const person = { firstName: "Jane", age: 25 };
+const { firstName, age } = person;
+console.log("Destructured name:", firstName);
+
+// 5. Default parameters
+const greet = (name = "Guest") => `Hello, ${name}`;
+console.log(greet()); // Hello, Guest
+
+// 6. Rest and Spread operators
+const numbers = [1, 2, 3];
+const allNumbers = [...numbers, 4, 5];
+console.log("Spread operator:", allNumbers);
+
+function sum(...args) {
+  return args.reduce((total, num) => total + num, 0);
+}
+console.log("Rest operator sum:", sum(1, 2, 3, 4));
+
+// ES7 (2016) Features
+// 7. Array includes
+console.log("Includes method:", numbers.includes(2)); // true
+
+// 8. Exponentiation operator
+console.log("Exponentiation:", 2 ** 3); // 8
+
+// ES8 (2017) Features
+// 9. String padding
+console.log("PadStart:", "5".padStart(2, "0")); // "05"
+
+// 10. Object.entries and Object.values
+const obj = { a: 1, b: 2, c: 3 };
+console.log("Object.entries:", Object.entries(obj));
+console.log("Object.values:", Object.values(obj));
+
+// 11. Async/Await
+async function fetchData() {
+  const data = await new Promise(resolve => resolve("Fetched Data"));
+  console.log("Async/Await result:", data);
+}
+fetchData();
+
+// ES9 (2018) Features
+// 12. Spread properties for objects
+const obj2 = { ...obj, d: 4 };
+console.log("Object spread:", obj2);
+
+// 13. Asynchronous iteration (for-await-of with async iterables)
+async function asyncGenerator() {
+  yield "First";
+  yield "Second";
+}
+(async () => {
+  for await (const item of asyncGenerator()) {
+    console.log("Async iteration:", item);
+  }
+})();
+
+// ES10 (2019) Features
+// 14. Array.flat
+const nestedArr = [1, [2, [3, 4]]];
+console.log("Array flat:", nestedArr.flat(2));
+
+// 15. Array.flatMap
+const words = ["hello world", "good day"];
+console.log("FlatMap:", words.flatMap(word => word.split(" ")));
+
+// 16. Optional catch binding
+try {
+  throw new Error("Oops!");
+} catch {
+  console.log("Caught an error without binding it");
+}
+
+// 17. Object.fromEntries
+const entries = [["a", 1], ["b", 2]];
+console.log("Object.fromEntries:", Object.fromEntries(entries));
