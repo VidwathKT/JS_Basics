@@ -1,4 +1,4 @@
-//Synchronous function
+// Synchronous function
 console.log("Start");
 console.log("Doing something...");
 console.log("End");
