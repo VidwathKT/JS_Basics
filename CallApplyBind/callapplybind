@@ -1,0 +1,31 @@
+
+// These are methods that allow you to manipulate the this keyword inside a function.
+
+
+// Call: The call() method allows you to call a function with a specified this value and individual arguments. 
+function greet(greeting) {
+  console.log(greeting + ', ' + this.name);
+}
+
+let person = { name: 'John' };
+
+greet.call(person, 'Hello'); // Output: Hello, John
+
+// Apply: The apply() method is similar to call(), but it takes an array of arguments instead of individual arguments. 
+function greet(greeting, question) {
+  console.log(greeting + ', ' + this.name + '. ' + question);
+}
+
+let person1 = { name: 'John' };
+
+greet.apply(person1, ['Hello', 'How are you?']); // Output: Hello, John. How are you?
+
+//Bind: The bind() method creates a new function that, when called, has its this keyword set to the provided value. 
+function greet() {
+  console.log('Hello, ' + this.name);
+}
+
+let person2 = { name: 'John' };
+
+let greetJohn = greet.bind(person2);
+greetJohn(); // Output: Hello, John

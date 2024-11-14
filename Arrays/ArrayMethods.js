@@ -45,11 +45,13 @@ fru.copyWithin(2, 0);//Banana,Orange,Banana,Orange->Copy to index 2, all element
 const frui = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
 frui.copyWithin(2, 0, 2);//Banana,Orange,Banana,Orange,Kiwi->Copy to index 2, the elements from index 0 to 2
 //flat()->The flat() method creates a new array with sub-array elements concatenated to a specified depth.
-const myArr = [[1,2],[3,4],[5,6]];
-const newArr = myArr.flat();//1,2,3,4,5,6
+const myArr = [[1,2,[2,3]],[3,4],[5,6]];
+const newArr = myArr.flat();//1,2,2,3,3,4,5,6
+console.log(newArr);
+
 //flatMap()->The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
 const myArr1 = [1, 2, 3, 4, 5, 6];
-const newArr1 = myArr1.flatMap(x => [x, x * 10]);//1,10,2,20,3,30,4,40,5,50,6,60
+const newArr1 = myArr1.flatMap(x => [x, x * 10]);//[1,10],2,20,3,30,4,40,5,50,6,60
 //splice()
 const fruit1 = ["Banana", "Orange", "Apple", "Mango"];
 fruit1.splice(2, 0, "Lemon", "Kiwi"); //Banana,Orange,Lemon,Kiwi,Apple,Mango
